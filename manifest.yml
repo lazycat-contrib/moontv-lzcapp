@@ -16,15 +16,14 @@ application:
 
 services:
     moontv:
-        # ghcr.io/moontechlab/lunatv:4.3.0
-        image: xget.xi-xu.me/cr/ghcr/moontechlab/lunatv:4.3.0
+        # ghcr.io/moontechlab/lunatv:latest
+        image: xget.xi-xu.me/cr/ghcr/moontechlab/lunatv:latest
         environment:
             - USERNAME={{ .U.admin_username }}
             - PASSWORD={{.U.admin_password}}
             - NEXT_PUBLIC_ENABLE_REGISTER={{.U.enable_register}}
             - NEXT_PUBLIC_STORAGE_TYPE=redis
             - REDIS_URL=redis://moontv-redis:6379
-            - AUTH_TOKEN={{.U.auth_token}}
         depends_on:
             - moontv-redis
 

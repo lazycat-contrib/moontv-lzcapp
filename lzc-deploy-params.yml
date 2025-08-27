@@ -14,11 +14,6 @@ params:
       name: "allow user  register"
       description: "allow user to register new account"
 
-    - id: auth_token
-      type: string
-      name: "device auth token"
-      description: "device auth token from telegram bot @moontv_auth_bot"
-
 locales:
     zh:
         admin_username:
@@ -32,7 +27,3 @@ locales:
         enable_register:
             name: "开启注册"
             description: "允许注册新用户"
-
-        auth_token:
-            name: "授权码"
-            description: "授权码需要在telegram机器人@moontv_auth_bot申请"
