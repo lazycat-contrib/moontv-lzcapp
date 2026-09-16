@@ -1,0 +1,14 @@
+package: lazycat.coummunity.app.moontv
+version: 4.3.0
+name: MoonTV
+description: "开箱即用的、跨平台的影视聚合播放器"
+min_os_version: "1.5.0"
+homepage: https://github.com/MoonTechLab/LunaTV
+author: MoonTechLab
+locales:
+  zh:
+    description: "开箱即用的、跨平台的影视聚合播放器"
+    name: MoonTV
+  en:
+    description: "Out-of-the-box, cross-platform video aggregation player"
+    name: MoonTV

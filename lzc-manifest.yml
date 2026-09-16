@@ -1,0 +1,25 @@
+application:
+  subdomain: moontv
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://moontv:3000/
+services:
+  moontv:
+    # upstream: ghcr.io/moontechlab/lunatv:v100.1.3
+    image: ghcr.1ms.run/moontechlab/lunatv:v100.1.3
+    environment:
+      - USERNAME={{ .U.admin_username }}
+      - PASSWORD={{.U.admin_password}}
+      - NEXT_PUBLIC_ENABLE_REGISTER={{.U.enable_register}}
+      - NEXT_PUBLIC_STORAGE_TYPE=redis
+      - REDIS_URL=redis://moontv-redis:6379
+    depends_on:
+      - moontv-redis
+
+  moontv-redis:
+    # upstream: library/redis:7.4-alpine
+    image: docker.1ms.run/library/redis:7.4-alpine
+    binds:
+      - /lzcapp/var/redis:/data
